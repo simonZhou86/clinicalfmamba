@@ -1,0 +1,5 @@
+# ninja log v5
+647	12885	1717540848000000000	/content/drive/MyDrive/SegMamba/causal-conv1d/build/temp.linux-x86_64-cpython-310/csrc/causal_conv1d_update.o	5b4bb93da09075f8
+647	24184	1717540859000000000	/content/drive/MyDrive/SegMamba/causal-conv1d/build/temp.linux-x86_64-cpython-310/csrc/causal_conv1d_fwd.o	e796c32260946f7
+646	42804	1717540877000000000	/content/drive/MyDrive/SegMamba/causal-conv1d/build/temp.linux-x86_64-cpython-310/csrc/causal_conv1d.o	43f75caa631f64d
+647	44246	1717540879000000000	/content/drive/MyDrive/SegMamba/causal-conv1d/build/temp.linux-x86_64-cpython-310/csrc/causal_conv1d_bwd.o	df4fdfa68bdb17e8
