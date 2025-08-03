@@ -1,2 +1,2 @@
-# clinicalfmamba
-PyTorch Implementation for ClinicalFMamba, MLMI 2025
+# ClinicalFMamba
+PyTorch Implementation for ClinicalFMamba: Advancing Clinical Assessment using Mamba-based Multimodal Neuroimaging Fusion, MICCAI MLMI 2025
