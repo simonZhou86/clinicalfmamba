@@ -1,7 +1,4 @@
 from light_training.loss.eval_metric import *
-
-# run validation for every epoch
-
 import time
 import os
 import argparse

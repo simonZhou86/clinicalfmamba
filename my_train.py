@@ -2,7 +2,6 @@ import argparse
 import os
 from os.path import exists
 import sys
-from IPython.core.interactiveshell import validate
 
 sys.path.append("../")
 from tqdm import trange
@@ -31,13 +30,13 @@ parser.add_argument('--epochs', type=int, default=100, help='number of epochs fo
 parser.add_argument('--lr', type=float, default=0.0001, help='learning rate for training')
 parser.add_argument('--lr_decay', type=bool, default=False, help='decay learing rate?')
 parser.add_argument('--exp_folder_name', type=str, default="", help='exp folder name')
-parser.add_argument('--lambda1', type=float, default=0.5, help='weight for image gradient loss')
-parser.add_argument('--lambda2', type=float, default=0.5, help='weight for perceptual loss')
+# parser.add_argument('--lambda1', type=float, default=0.5, help='weight for image gradient loss')
+# parser.add_argument('--lambda2', type=float, default=0.5, help='weight for perceptual loss')
 # parser.add_argument('--checkpoint', type=str, default='./model', help='Path to checkpoint')
 parser.add_argument('--cuda', action='store_true', help='whether to use cuda', default=True)
 parser.add_argument('--seed', type=int, default=3407, help='random seed to use')
-parser.add_argument('--base_loss', type=str, default='l1_charbonnier',
-                    help='which loss function to use for pixel-level (l2 or l1 charbonnier)')
+# parser.add_argument('--base_loss', type=str, default='l1_charbonnier',
+#                     help='which loss function to use for pixel-level (l2 or l1 charbonnier)')
 
 opt = parser.parse_args()
 
@@ -51,7 +50,7 @@ random_seed(seed_val, True)
 ################################
 
 ############ making dirs########################
-res_dir = "/content/drive/MyDrive/SegMamba/my_res"
+res_dir = "./my_res"
 if not os.path.exists(res_dir):
     os.mkdir(res_dir)
 # model_dir = os.path.join(res_dir, "pretrained_models")
@@ -80,40 +79,8 @@ def normalize(im):
 
 ####### loading dataset ####################################
 data_dir = "./my_data" #"/content/drive/MyDrive/SegMamba/my_data/SPECT-MRI"
-# ct_file, mri_file = get_common_file(data_dir)
-# assert len(ct_file) == len(mri_file)
-# train_ct, train_mri = load_data(ct_file, data_dir)
-# # torch.save(test_ct, os.path.join(config.test_data_dir, "ct_test.pt"))
-# # torch.save(test_mri, os.path.join(config.test_data_dir, "mri_test.pt"))
-# total_files = len(ct_file)
-# cv_datasets = get_cv_dataset(total_files, fold = 5, shuffle = True)
-# # print(train_ct.shape, train_mri.shape, test_ct.shape, test_mri.shape)
-# # print(cv_datasets)
-# print("finish creating cv datasets")
-#train_total = torch.cat((train_ct, train_mri), dim=0).to(device)
 
-# these loaders return index, not the actual image
-# train_loader, val_loader = get_loader(train_ct, train_mri, config.train_val_ratio, opt.batch_size)
-# print("train loader length: ", len(train_loader), " val loder length: ", len(val_loader))
-
-# check the seed is working
-# for batch_idx in train_loader:
-#     batch_idx = batch_idx.view(-1).long()
-#     print(batch_idx)
-# print("validation index")
-# for batch_idx in val_loader:
-#     batch_idx = batch_idx.view(-1).long()
-#     print(batch_idx)
-# sys.exit()
 ############################################################
-
-############ loading model #####################
-        
-###################################################
-
-##### downloading pretrained vgg model ##################
-# vgg = vgg16_bn(pretrained=True)
-########################################################
 
 
 my_loss_fn = fusion_loss_med3D()
