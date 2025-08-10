@@ -32,5 +32,5 @@ python ./my_train.py --dataset "MRI-SPECT" --lr 0.0005 --epoch 200 --exp_folder_
 
 ## Sample Inference pipeline
 ```bash
-python validation.py --model_pt ./model/dep5_epo200_exp.pt --test_folder ./my_data --folder_name "dep5_epo200_exp" --exp 0 --is_spect
+python validation.py --model_pt ./model/dep5_epo200_exp.pt --test_folder ./my_data --folder_name "dep5_epo200_exp" --exp 0
 ```
