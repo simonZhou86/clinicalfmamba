@@ -3,7 +3,7 @@ PyTorch Implementation of ClinicalFMamba: Advancing Clinical Assessment using Ma
 
 Arxiv Link: [here](https://arxiv.org/abs/2508.03008)
 
-## Setup
+## Setup (Run on Google Colab)
 ### Install Mamba
 ```bash
 cd causal-conv1d
